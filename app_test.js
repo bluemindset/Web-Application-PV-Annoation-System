@@ -68,9 +68,14 @@ var content = "<label>Name</label> "+"  <input type=\"text\" placeholder=\"Enter
                     var coord = e.latlng.toString().split(',');
                     var lat = coord[0].split('(');
                     var lng = coord[1].split(')');
+                    var popup = L.popup( {maxHeight:200}).setContent(content);
                     alert("Add Solar Panel Location on map at cordinates: \nLA: " + lat[1] + " & LO: " + lng[0]);
-                    L.marker(e.latlng).addTo(map).bindPopup(content,closeButton=true).openPopup();//.openPopup();
-                  // var x= mapContainerPos.left+map.latLngToConatinerPoint(e.getLatLng());
+                    L.marker(e.latlng).addTo(map).bindPopup(popup).openPopup();//.openPopup();
+                
+                   
+                
+                  
+                    // var x= mapContainerPos.left+map.latLngToConatinerPoint(e.getLatLng());
           //         var y= mapConatinerPos.top+map.latLngToConatinerPoint(e.getLatLng());
             //      L.DomUtil.setTransform(e.blindPopup(content).openPopup(),{x:x+4,y:y+5},1);
                });
