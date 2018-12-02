@@ -25,4 +25,8 @@ class PV
   public $inverter;
   public $sensors;
 
+  public function construct($database){
+    $this->conn = $database;
+
+  }
 } ?>
