@@ -1,7 +1,7 @@
 
 var addPanelbool = 0;
 
-var map = L.map('mapid').setView([51.505, -0.09], 13);
+var map = L.map('mapid').setView([35, 33.3], 9);
 
 
 
@@ -39,14 +39,19 @@ document.getElementById("addPanels").className= "btn-success btn-lg";
 
 document.getElementById("mapid").style.cursor = 'crosshair';
 
+var content = 
+      "<b>Portland Cycle Safety Map</b>"+
+      "<br />This map is intended to bring dangerous intersections"+
+      "<br />and street segments to the attention of Portland area cyclists: this is a work in progress."+
+      "<br />Each skull marks the location a cyclist has been killed by an automobile sometime between 2005 and 2017."+
+      
 map.on('click', 
      	function(e){
      		var coord = e.latlng.toString().split(',');
      		var lat = coord[0].split('(');
     		var lng = coord[1].split(')');
-     		alert("Add Solar Panel Location on map at cordinates: \nLA: " + lat[1] + "& LO: " + lng[0]);
-     		L.marker(e.latlng).addTo(map).bindPopup('A pretty CSS3 popup.<br> Easily customizable.').openPopup();
-             ;
+     		alert("Add Solar Panel Location on map at cordinates: \nLA: " + lat[1] + " & LO: " + lng[0]);
+             L.marker(e.latlng).addTo(map).bindPopup(content).openPopup();
      	});
 document.getElementById('map').style.cursor = '';
 }
