@@ -313,4 +313,8 @@ header.masthead p {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
 }
-#mapid { height: 580px; }
+#mapid { height: 580px;margin-top: 70px; }
+
+.leaflet-container.crosshair-cursor-enabled {
+  cursor:crosshair;
+}
