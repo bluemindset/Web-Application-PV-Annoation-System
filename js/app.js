@@ -43,15 +43,19 @@ var content =
       "<b>Portland Cycle Safety Map</b>"+
       "<br />This map is intended to bring dangerous intersections"+
       "<br />and street segments to the attention of Portland area cyclists: this is a work in progress."+
-      "<br />Each skull marks the location a cyclist has been killed by an automobile sometime between 2005 and 2017."+
-      
-map.on('click', 
-     	function(e){
-     		var coord = e.latlng.toString().split(',');
-     		var lat = coord[0].split('(');
-    		var lng = coord[1].split(')');
-     		alert("Add Solar Panel Location on map at cordinates: \nLA: " + lat[1] + " & LO: " + lng[0]);
-             L.marker(e.latlng).addTo(map).bindPopup(content).openPopup();
-     	});
+      "<br />Each skull marks the location a cyclist has been killed by an automobile sometime between 2005 and 2017.";
+var onetime = 0;
+ if (onetime == 0 ){    
+        map.on('click', 
+                function(e){
+                    var coord = e.latlng.toString().split(',');
+                    var lat = coord[0].split('(');
+                    var lng = coord[1].split(')');
+                    alert("Add Solar Panel Location on map at cordinates: \nLA: " + lat[1] + " & LO: " + lng[0]);
+                    L.marker(e.latlng).addTo(map).bindPopup(content).openPopup();
+               });
+              onetime = 1; 
+            }
+
 document.getElementById('map').style.cursor = '';
 }
