@@ -1,5 +1,6 @@
 
 var addPanelbool = 0;
+var onetime = 0;
 
 var map = L.map('mapid').setView([35, 33.3], 9);
 
@@ -44,7 +45,6 @@ var content =
       "<br />This map is intended to bring dangerous intersections"+
       "<br />and street segments to the attention of Portland area cyclists: this is a work in progress."+
       "<br />Each skull marks the location a cyclist has been killed by an automobile sometime between 2005 and 2017.";
-var onetime = 0;
  if (onetime == 0 ){    
         map.on('click', 
                 function(e){

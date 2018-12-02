@@ -1,12 +1,13 @@
-(ID,Name,xcord,ycord,address,Operator_Name,Commision_date,Description,System_Power,Annual_Production,CO2,Reimbursement,Panel_modules,Azimuth,Inclination_angle,Communication,Inverter,Sensors)
+(ID,Name,X_cord,Y_cord,Address,Operator_Name,Commision_Date,Description,System_Power,Annual_Production,CO2,Reimbursement,
+Panel_Modules,Azimuth,Inclination_Angle,Communication,Inverter,Sensors)
 
-CREATE TABLE[IF NOT EXISTS] PV
+CREATE TABLE solarPanels
   (
-    ID INT AUTO_INCREMENT PROMARY KEY,
+    ID INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(30) NOT NULL,
-    Photo VARCHAR(40) NOT NULL,
-    X-cord DECIMAL NOT NULL,
-    Y-cord DECIMAL NOT NULL,
+    Photo VARCHAR(50) NOT NULL,
+    X_cord DECIMAL NOT NULL,
+    Y_cord DECIMAL NOT NULL,
     Address VARCHAR(40) NOT NULL,
     Operator_Name VARCHAR(40) NOT NULL,
     Commision_Date DATE NOT NULL,
@@ -14,7 +15,7 @@ CREATE TABLE[IF NOT EXISTS] PV
     System_Power DECIMAL NOT NULL,
     Annual_Production DECIMAL NOT NULL,
     CO2 DECIMAL NOT NULL,
-    Reimbursement INT NOT NULL,
+    Reimbursement DECIMAL NOT NULL,
     Panel_Modules INT NOT NULL,
     Azimuth DECIMAL NOT NULL,
     Inclination_Angle DECIMAL NOT NULL,
