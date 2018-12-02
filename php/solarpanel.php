@@ -2,7 +2,7 @@
 class PV
 {
   private $conn;
-  private $table_name="solarPanels";
+  private $table_name="solarPanels2";
 
 
   public $id;
@@ -25,8 +25,16 @@ class PV
   public $inverter;
   public $sensors;
 
-  public function construct($database){
+  public function __construct($database){
     $this->conn = $database;
 
   }
+  public function read(){
+    $query = "SELECT * FROM ".$this->table_name;
+    $stmt = $this->conn->prepare($query);
+    $stmt->execute();
+    return  $stmt;
+    }
+    
+    
 } ?>
