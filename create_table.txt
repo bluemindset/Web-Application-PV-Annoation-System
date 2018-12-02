@@ -1,0 +1,24 @@
+(ID,Name,xcord,ycord,address,Operator_Name,Commision_date,Description,System_Power,Annual_Production,CO2,Reimbursement,Panel_modules,Azimuth,Inclination_angle,Communication,Inverter,Sensors)
+
+CREATE TABLE[IF NOT EXISTS] PV
+  (
+    ID INT AUTO_INCREMENT PROMARY KEY,
+    Name VARCHAR(30) NOT NULL,
+    xcord DECIMAL NOT NULL,
+    ycord DECIMAL NOT NULL,
+    address VARCHAR(40) NOT NULL,
+    Operator_Name VARCHAR(40) NOT NULL,
+    Commision_date DATE NOT NULL,
+    Description VARCHAR(100) NOT NULL,
+    System_Power DECIMAL NOT NULL,
+    Annual_Production DECIMAL NOT NULL,
+    CO2 DECIMAL NOT NULL,
+    Reimbursement INT NOT NULL,
+    Panel_modules INT NOT NULL,
+    Azimuth DECIMAL NOT NULL,
+    Inclination_angle DECIMAL NOT NULL,
+    Communication VARCHAR(40) NOT NULL,
+    Inverter VARCHAR(40) NOT NULL,
+    Sensors VARCHAR(40) NOT NULL
+  )
+ ENGINE=INNODB;
