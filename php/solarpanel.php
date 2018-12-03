@@ -2,7 +2,7 @@
 class PV
 {
   private $conn;
-  private $table_name="solarPanels2";
+  private $table_name="solarPV";
   public $id;
   public $name;
   public $photo;
@@ -61,34 +61,49 @@ class PV
        $this->sensors =$row['Sensors'];
   }
   public function insertSql(){
-     $query = "INSERT INTO " . $this->table_name . "(Name,Photo,X_cord,Y_cord,Address,Operator_Name,Commision_Date,Description,System_Power,Annual_Production,CO2,Reimbursement,
+     $query = "INSERT INTO " . $this->table_name . "(Name,X_cord,Y_cord,Address,Operator_Name,Commision_Date,Description,System_Power,Annual_Production,CO2,Reimbursement,
      Panel_Modules,Azimuth,Inclination_Angle,Communication,Inverter,Sensors)
-     VALUES ("
-             . "\"" . $this->name             . "\"," 
-             . "\"" . $this->photo            . "\","       
+     VALUES ("."\"" . $this->name             . "\"," 
+            // . "\"" . $this->photo            . "\","       
                     .$this->x_cord           . ","   
                     .$this->y_cord           . ","   
              . "\"" .$this->address          . "\","   
              . "\"" .$this->oparetor_name    . "\","   
              . "\"" .$this->commision_date   . "\","   
              . "\"" .$this->description      . "\","   
-                    .$this->system_power     . ","   
-                    .$this->annual_production. ","   
-                    .$this->co2              . ","  
-                    .$this->reimbursement    . ","  
-                    .$this->panel_modules    . ","   
-                    .$this->azimuth          . ","   
-                    .$this->inclination_angle. ","
+             . "\""       .$this->system_power     . ".\","   
+             . "\""       .$this->annual_production. "\","   
+             . "\""       .$this->co2              . "\","  
+             . "\""      .$this->reimbursement    . "\","  
+             . "\""       .$this->panel_modules    . "\","   
+             . "\""       .$this->azimuth          . "\","   
+             . "\""       .$this->inclination_angle. "\","
              . "\"" .$this->communication    . "\","   
              . "\"" .$this->inverter         . "\","   
              . "\"" .$this->sensors          . "\""    
      ." )";
      
+     echo $query;
+
+     
      $sendquery = $this->conn->prepare($query);
     if($sendquery->execute()){
-      echo "hi";
       return true;
     }
     return false;
   }
-} ?>
+
+public function deleteSql(){
+     $query = "DELETE FROM " . $this->table_name . " WHERE name = " . "\"". $this->name  ."\"";
+     echo $query;
+     $sendquery = $this->conn->prepare($query);
+    if($sendquery->execute()){
+      return true;
+    }
+    return false;
+  }
+} 
+
+?>
+
+

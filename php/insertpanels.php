@@ -1,49 +1,70 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
- 
+//$datapost  = $_POST["pData"];
+
 include_once "solarpanel.php";
 include_once "database.php";
-$database = new Database();
-$db = $database->getConnection();
+$ndatabase = new Database();
+$ndb = $ndatabase->getConnection();
 
-$panel = new PV($db);
-/*Get the data from the encaspulated JSON FORM*/
-$datapost  = json_decode(file_get_contents("http://localhost/solarpanels/php/postJason.php"));
+$npanel = new PV($ndb);
+/*Get the data from the encaspulated JSON FORM
+//$datapost  = json_decode(file_get_contents("php://input"));
+$datapost= array();
+$datapost = json_decode($_POST['myData']);
+//echo $_POST['myData'];
+print_r  ($_POST);
+print_r  ($datapost);
+*/
+$Name = $_POST["Name"];
+//$Photo= $_POST["Photo"];
+$X_cord = $_POST["X_cord"];
+$Y_cord = $_POST["Y_cord"];
+$Address = $_POST["Address"];
+$Operator = $_POST["Operator_Name"];
+$Commision_Date = $_POST["Commision_Date"];
+$Description = $_POST["Description"];
+$System_Power = $_POST["System_Power"];
+$Annual_Production = $_POST["Annual_Production"];
+$CO2 = $_POST["CO2"];
+$Reimbursement = $_POST["Reimbursement"];
+$Panel_modules = $_POST["Panel_Modules"];
+$Azimuth = $_POST["Azimuth"];
+$Inclination = $_POST["Inclination_Angle"];
+$Communication = $_POST["Communication"];
+$Inverter = $_POST["Inverter"];
+$Sensors = $_POST["Sensors"];
 
 
-      $panel->name=                 $datapost->Name;
-      $panel->photo=                $datapost->Photo;
-      $panel->x_cord=               $datapost->X_cord;
-      $panel->y_cord=               $datapost->Y_cord;
-      $panel->address=              $datapost->Address;
-      $panel->oparetor_name=        $datapost->Oparetor_Name;
-      $panel->commision_date=       $datapost->Commision_Date;
-      $panel->description=          $datapost->Description;
-      $panel->system_power=         $datapost->System_Power;
-      $panel->annual_production=    $datapost->Annual_Production;
-      $panel->co2=                  $datapost->CO2;
-      $panel->reimbursement=        $datapost->Reimbursement;
-      $panel->panel_modules=        $datapost->Panel_Modules;
-      $panel->azimuth=              $datapost->Azimuth;
-      $panel->inclination_angle=    $datapost->Inclination_Angle;
-      $panel->communication=        $datapost->Communication;
-      $panel->inverter=             $datapost->Inverter;
-      $panel->sensors=              $datapost->Sensors ;
 
-if($panel->insertSql()){
+      $npanel->name=                 $Name;
+   //   $npanel->photo=                $Photo;
+      $npanel->x_cord=               $X_cord;
+      $npanel->y_cord=               $Y_cord;
+      $npanel->address=              $Address;
+      $npanel->oparetor_name=        $Oparetor;
+      $npanel->commision_date=       $Commision_Date;
+      $npanel->description=          $Description;
+      $npanel->system_power=         $System_Power;
+      $npanel->annual_production=    $Annual_Production;
+      $npanel->co2=                  $CO2;
+      $npanel->reimbursement=        $Reimbursement;
+      $npanel->panel_modules=        $Panel_modules;
+      $npanel->azimuth=              $Azimuth;
+      $npanel->inclination_angle=    $Inclination;
+      $npanel->communication=        $Communication;
+      $npanel->inverter=             $Inverter;
+      $npanel->sensors=              $Sensors ;
+print($Sensors);
+if($npanel->insertSql()){
    
     echo "yes";
     http_response_code(201);
 }
     else{
-        echo "no";
+        //echo "no";
         http_response_code(503);
 
     }
-
+ 
 
 ?>

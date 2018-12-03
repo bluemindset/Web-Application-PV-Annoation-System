@@ -6,10 +6,12 @@ $(document).ready(function(){
                  $.ajax({
                         type: 'GET',
                         dataType: 'json',
-                        url: "http://localhost/solarpanels/php/test.json",
+                        url: "http://localhost/solarpanels/php/readpanels.php",
                         success:function(data){
-                            var datastr = JSON.stringify(data)
+                            
+                            var datastr = JSON.stringify(data);
                             var allPanels = JSON.parse(datastr);
+                            alert(datastr);
                             $("body").append(JSON.stringify(data));
                             for (var key in allPanels) {
                                 if (allPanels.hasOwnProperty(key)) {
@@ -34,7 +36,7 @@ $(document).ready(function(){
                                         "<br><label>Communication</label>"+"       <input type=\"text\" value="+panel[i].Communication+" name=\"Communication\" size=\"15\" required>"+
                                         "<br><label>Inverter</label>"+"      <input type=\"text\" value="+panel[i].Inverter+" name=\"Inverter\" size=\"15\" required>"+
                                         "<br><label>Sensors</label>"+"      <input type=\"text\" value="+panel[i].Sensors+" name=\"Sensors\" size=\"10\" required>"+
-                                        "<br><input type=\"submit\" value=\"Edit Form\">"+"    <input type=\"button\" value=\"Cancel\"></form>";
+                                        "<br><input type=\"submit\" value=\"Update\">"+"    <input type=\"button\" id = \"deleteb\" value=\"Delete\"></form>";
 
 
                                         var popup=L.popup({maxHeight:300}).setContent(content);//alert(content);

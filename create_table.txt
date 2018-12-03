@@ -49,3 +49,27 @@ CREATE TABLE solarPanels2
     Sensors VARCHAR(40)
   )
  ENGINE=INNODB;
+
+ CREATE TABLE solarPV
+  (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(30)  ,
+    Photo VARCHAR(50) ,
+    X_cord DECIMAL(10,6)  ,
+    Y_cord DECIMAL(10,6)  ,
+    Address VARCHAR(40)  ,
+    Operator_Name VARCHAR(40),
+    Commision_Date DATE  ,
+    Description VARCHAR(100),
+    System_Power VARCHAR(10) ,
+    Annual_Production VARCHAR(10),
+    CO2 VARCHAR(10) ,
+    Reimbursement VARCHAR(10) ,
+    Panel_Modules VARCHAR(10) ,
+    Azimuth VARCHAR(10) ,
+    Inclination_Angle VARCHAR(10) ,
+    Communication VARCHAR(10) ,
+    Inverter VARCHAR(10) ,
+    Sensors VARCHAR(10)
+  )
+ ENGINE=INNODB;
