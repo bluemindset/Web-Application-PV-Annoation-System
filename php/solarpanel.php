@@ -3,8 +3,6 @@ class PV
 {
   private $conn;
   private $table_name="solarPanels2";
-
-
   public $id;
   public $name;
   public $photo;
@@ -29,44 +27,38 @@ class PV
     $this->conn = $database;
 
   }
-  public function read(){
+  public function readAll(){
     $query = "SELECT * FROM ".$this->table_name;
     $stmt = $this->conn->prepare($query);
     $stmt->execute();
     return  $stmt;
-    }
+  }
 
- public function readOne(){
- 
-      $query = "SELECT
-                 *
-              FROM
-                  " . $this->table_name . " p
-              WHERE
-                  p.id = ? ";
-              
+ public function readOne($readID){
+      $query = "SELECT * FROM " . $this->table_name . " WHERE id = ? ";
       $stmt = $this->conn->prepare( $query );
       $stmt->bindParam(1, $this->id);
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
-       $this->ID = $row['id'];
-       $this->name =  $row['name'];
-       $this->X_cord =$row['X_cord'];
-       $this->Y_cord =$row['Y_cord'];
-       $this->Address =$row['Address'];
-       $this->Oparetor_Name =$row['Operator_Name'];
-       $this->Commision_Date =$row['Commision_Date'];
-       $this->Description = $row['Description'];
-       $this->System_Power =$row['System_Power'];
-       $this->Annual_Production=$row["Annual_Production"];
-       $this->CO2 =$row['CO2'];
-       $this->Reimbursement =$row['Reimbursement'];
-       $this->Panel_Modules =$row['Panel_Modules'];
-       $this->Azimuth =$row['Azimuth'];
-       $this->Inclination_Angle = $row['Inclination_Angle'];
-       $this->Communication =$row['Communication'];
-       $this->Inverter=$row['Inverter'];
-       $this->Sensors =$row['Sensors'];
+       $this->id = $row['ID'];
+       $this->name =  $row['Name'];
+       $this->photo = $row['Photo'];
+       $this->x_cord =$row['X_cord'];
+       $this->y_cord =$row['Y_cord'];
+       $this->address =$row['Address'];
+       $this->oparetor_name =$row['Operator_Name'];
+       $this->commision_date =$row['Commision_Date'];
+       $this->description = $row['Description'];
+       $this->system_power =$row['System_Power'];
+       $this->annual_production=$row["Annual_Production"];
+       $this->co2 =$row['CO2'];
+       $this->reimbursement =$row['Reimbursement'];
+       $this->panel_modules =$row['Panel_Modules'];
+       $this->azimuth =$row['Azimuth'];
+       $this->inclination_angle = $row['Inclination_Angle'];
+       $this->communication =$row['Communication'];
+       $this->inverter=$row['Inverter'];
+       $this->sensors =$row['Sensors'];
   }
     
 } ?>

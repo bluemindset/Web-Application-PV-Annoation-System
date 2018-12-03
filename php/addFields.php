@@ -16,26 +16,27 @@
   $communication = $_POST["Communication"];
   $Inverter = $_POST["Inverter"];
   $Sensors = $_POST["Sensors"];
+  
   if(isset($Name))
   {
     $data= array
     (
-        "Name" => $Name;
-        "X_cord" => $X_cord;
-        "Y_cord" => $Y_cord;
-        "Address" => $Address;
-        "Operator" => $Operator;
-        "Commision_Date" => $Commision_Date;
-        "Description" => $Description;
-        "System_Power" => $System_Power;
-        "Annual_Production" => $Annual_production;
-        "CO2" => $CO2;
-        "Reimbursement" => $Reimbursement;
-        "Panel_Modules" => $Panel_modules;
-        "Azimuth" => $Azimuth;
-        "Inclination_Angle" => $Inclination;
-        "Communication" => $Communication;
-        "Inverter" => $Inverter;
+        "Name" => $Name,
+        "X_cord" => $X_cord,
+        "Y_cord" => $Y_cord,
+        "Address" => $Address,
+        "Operator" => $Operator,
+        "Commision_Date" => $Commision_Date,
+        "Description" => $Description,
+        "System_Power" => $System_Powr,
+        "Annual_Production" => $Annual_production,
+        "CO2" => $CO2,
+        "Reimbursement" => $Reimbursement,
+        "Panel_Modules" => $Panel_modules,
+        "Azimuth" => $Azimuth,
+        "Inclination_Angle" => $Inclination,
+        "Communication" => $Communication,
+        "Inverter" => $Inverter,
         "Sensors" => $Sensors
     );
     echo json_encode($data);

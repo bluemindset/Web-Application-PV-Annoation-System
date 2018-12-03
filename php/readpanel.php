@@ -7,12 +7,12 @@ header("Access-Control-Allow-Credentials: true");
 header('Content-Type: application/json');
  
 include_once 'connect.php';
-
  
 $panel->id = isset($_GET['id']) ? $_GET['id'] : die();
 $panel->readOne();
- 
-if($panel->name!=null){
+echo $panel->name;
+
+if(isset($panel->name)){
     $solar_panel = array(
         "ID" => $panel->id,
         "Name" =>  $panel->name,
@@ -33,20 +33,13 @@ if($panel->name!=null){
         "Inverter"=>$panel->inverter,
         "Sensors" =>$panel->sensors
     );
-    echo "hssellos";
-
-    // set response code - 200 OK
+    
     http_response_code(200);
- 
-    // make it json format
-    echo json_encode($product_arr);
+    echo json_encode($solar_panel);
 }
  
 else{
-    // set response code - 404 Not found
     http_response_code(404);
- 
-    // tell the user product does not exist
     echo json_encode(array("message" => "Solar Panel does not exist."));
 }
 ?>
