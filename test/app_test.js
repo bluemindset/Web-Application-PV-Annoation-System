@@ -22,7 +22,7 @@ function addPanel(){
 document.getElementById("addPanels").className= "btn-success btn-lg";
 
 document.getElementById("mapid").style.cursor = 'crosshair';
-  map.once('click',
+  map.on('click',
                 function(e){
 
                     var coord = e.latlng.toString().split(',');
