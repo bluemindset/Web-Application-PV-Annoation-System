@@ -2,7 +2,7 @@
 var addPanelbool = 0;
 var onetime = 0;
 
-var map = L.map('mapid').setView([35, 33.3], 9);
+var map = L.map('mapid').setView([35.05, 33.45], 9);
 
 
 
@@ -15,16 +15,19 @@ attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStree
 'Imagery � <a href="https://www.mapbox.com/">Mapbox</a>',
 id: 'mapbox.streets'
 }).addTo(map);
-
-
-
+function Deactivate()
+{
+  document.getElementById("submitbtn").disabled=true;
+}
 function addPanel(){
-document.getElementById("addPanels").className= "btn-success btn-lg";
+//document.getElementById("addPanels").className= "btn-success btn-lg";
 
 document.getElementById("mapid").style.cursor = 'crosshair';
-  map.on('click',
+  map.once('click',
                 function(e){
-
+                //  map.on('click',function(e){
+              //  map.once('click',function(e)
+              //  {
                     var coord = e.latlng.toString().split(',');
                     var lat = coord[0].split('(');
                     var lng = coord[1].split(')');
@@ -49,7 +52,11 @@ document.getElementById("mapid").style.cursor = 'crosshair';
                     var popup = L.popup( {maxHeight:300 }).setContent(content);
                     alert("Add Solar Panel Location on map at cordinates: \nLA: " + lat[1] + " & LO: " + lng[0]);
                     L.marker(e.latlng).addTo(map).bindPopup(popup).openPopup();
-               });
+
+              //  });
+              // });});
+            });
 document.getElementById("submitbtn").style="default";
-document.getElementById('map').style.cursor = '';
+document.getElementById("submitbtn").disabled=false;
+document.getElementById('map').style.cursor ='';
 }
