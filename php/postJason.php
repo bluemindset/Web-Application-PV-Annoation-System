@@ -1,4 +1,5 @@
 <?php
+/*Gets the data and encapsulates them into JSON*/
   $Name = $_POST["Name"];
   $X_cord = $_POST["X_cord"];
   $Y_cord = $_POST["Y_cord"];
@@ -16,7 +17,7 @@
   $communication = $_POST["Communication"];
   $Inverter = $_POST["Inverter"];
   $Sensors = $_POST["Sensors"];
-  
+  print_r($_POST);
   if(isset($Name))
   {
     $data= array

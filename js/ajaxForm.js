@@ -1,9 +1,10 @@
 
-
+/*Gets the data from the new form 
+and sends a post request to the postJason.php*/
 $(document).ready(function() {
     $("#markerForm").click(function(){
         $.ajax({
-            url: "addFields.php",
+            url: "postJason.php",
             type: "POST",
             data: {
                 Name: $("#Name").val(),
