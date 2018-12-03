@@ -29,7 +29,7 @@
         "Operator" => $Operator,
         "Commision_Date" => $Commision_Date,
         "Description" => $Description,
-        "System_Power" => $System_Powr,
+        "System_Power" => $System_Power,
         "Annual_Production" => $Annual_production,
         "CO2" => $CO2,
         "Reimbursement" => $Reimbursement,
@@ -42,5 +42,7 @@
     );
     echo json_encode($data);
   }
+
+include_once "insert_panels.php"
 
  ?>

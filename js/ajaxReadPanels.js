@@ -1,3 +1,7 @@
+
+/*On page load get the encaspulated json from the readpanels and 
+create markers to insert the data inside*/
+
 $(document).ready(function(){
                  $.ajax({
                         type: 'GET',
