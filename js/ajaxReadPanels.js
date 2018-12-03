@@ -6,9 +6,9 @@ $(document).ready(function(){
                     $.ajax({
                         type: 'GET',
                         dataType: 'json',
-                        url: '/solarpanels/php/readpanels',
+                        url: "http://localhost/solarpanels/php/readpanels.php",
                         success:function(data){
-                         alert(data);
+                            $("body").append(JSON.stringify(data));
                         }
                     });
 });
