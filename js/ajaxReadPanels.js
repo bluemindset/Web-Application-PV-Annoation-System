@@ -8,7 +8,6 @@ $(document).ready(function(){
                         dataType: 'json',
                         url: "http://localhost/solarpanels/php/readpanels.php",
                         success:function(data){
-                            
                             var datastr = JSON.stringify(data);
                             var allPanels = JSON.parse(datastr);
                             alert(datastr);
@@ -37,15 +36,11 @@ $(document).ready(function(){
                                         "<br><label>Inverter</label>"+"      <input type=\"text\" value="+panel[i].Inverter+" name=\"Inverter\" size=\"15\" required>"+
                                         "<br><label>Sensors</label>"+"      <input type=\"text\" value="+panel[i].Sensors+" name=\"Sensors\" size=\"10\" required>"+
                                         "<br><input type=\"submit\" value=\"Update\">"+"    <input type=\"button\" id = \"deleteb\" value=\"Delete\"></form>";
-
-
                                         var popup=L.popup({maxHeight:300}).setContent(content);//alert(content);
                                         L.marker([panel[i].X_cord,panel[i].Y_cord]).addTo(map).bindPopup(popup);
                                     }
                                 }
                             }
                         }
-
-
                     });
-    } );
+                } );

@@ -53,26 +53,35 @@ $(document).ready(function() {
             complete: function (jsonstr) {
                 
                 alert(JSON.stringify(jsonstr));
-                        map.removeLayer(currentmarker);
+                window.location.reload();
             },       
         });
 
     });
-    
-    var marker;
-    map.on('click', function (e) {
-        if (marker) { // check
-            map.removeLayer(e.marker); // remove
-        }
+    $("#update").click(function(){
+        $.ajax({
+            url: "http://localhost/solarpanels/php/deletepanels.php",
+            type: "POST",
+            async:false,
+            data: {
+                Name: choice
+            },
+            dataType: "JSON",
+            complete: function (jsonstr) {
+                
+                alert(JSON.stringify(jsonstr));
+                window.location.reload();
+            },       
+        });
+
     });
 
     map.on('popupopen', function(e) {
             var delayInMilliseconds = 1000; 
             setTimeout(function() {
-                map.removeLayer(e.marker);
                 var marker = e.popup._source._popup.getContent();
-                var ch = ( $('[name=Name]').val() );
-                choice = ch;
+                var name = ( $('[name=Name]').val() );
+                name = currentname;
                 alert(choice);
             }, delayInMilliseconds);    
         });

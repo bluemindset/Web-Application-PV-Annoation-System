@@ -1,20 +1,11 @@
 <?php
-//$datapost  = $_POST["pData"];
-
 include_once "solarpanel.php";
 include_once "database.php";
 $ndatabase = new Database();
 $ndb = $ndatabase->getConnection();
 
 $npanel = new PV($ndb);
-/*Get the data from the encaspulated JSON FORM
-//$datapost  = json_decode(file_get_contents("php://input"));
-$datapost= array();
-$datapost = json_decode($_POST['myData']);
-//echo $_POST['myData'];
-print_r  ($_POST);
-print_r  ($datapost);
-*/
+
 $Name = $_POST["Name"];
 //$Photo= $_POST["Photo"];
 $X_cord = $_POST["X_cord"];
@@ -34,8 +25,6 @@ $Communication = $_POST["Communication"];
 $Inverter = $_POST["Inverter"];
 $Sensors = $_POST["Sensors"];
 
-
-
       $npanel->name=                 $Name;
    //   $npanel->photo=                $Photo;
       $npanel->x_cord=               $X_cord;
@@ -54,17 +43,9 @@ $Sensors = $_POST["Sensors"];
       $npanel->communication=        $Communication;
       $npanel->inverter=             $Inverter;
       $npanel->sensors=              $Sensors ;
-print($Sensors);
-if($npanel->insertSql()){
-   
-    echo "yes";
-    http_response_code(201);
-}
-    else{
-        //echo "no";
+
+if($npanel->insertSql())
+       http_response_code(201);
+    else
         http_response_code(503);
-
-    }
- 
-
 ?>
