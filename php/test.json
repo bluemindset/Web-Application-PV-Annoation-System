@@ -1,0 +1,46 @@
+{
+    "all": [
+        {
+            "ID": "1",
+            "Name": "testname",
+            "Photo": null,
+            "X_cord": null,
+            "Y_cord": null,
+            "Address": "testaddress",
+            "Operator_Name": null,
+            "Commision_Date": null,
+            "Description": null,
+            "System_Power": null,
+            "Annual_Production": null,
+            "CO2": null,
+            "Reimbursement": null,
+            "Panel_Modules": null,
+            "Azimuth": null,
+            "Inclination_Angle": null,
+            "Communication": null,
+            "Inverter": null,
+            "Sensors": null
+        },
+        {
+            "ID": "2",
+            "Name": "othkiossou",
+            "Photo": null,
+            "X_cord": null,
+            "Y_cord": null,
+            "Address": null,
+            "Operator_Name": null,
+            "Commision_Date": null,
+            "Description": null,
+            "System_Power": null,
+            "Annual_Production": null,
+            "CO2": "2",
+            "Reimbursement": null,
+            "Panel_Modules": null,
+            "Azimuth": null,
+            "Inclination_Angle": null,
+            "Communication": null,
+            "Inverter": null,
+            "Sensors": null
+        }
+    ]
+}

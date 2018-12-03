@@ -6,7 +6,7 @@ $(document).ready(function(){
                     $.ajax({
                         type: 'GET',
                         dataType: 'json',
-                        url: "http://localhost/solarpanels/php/readpanels.php",
+                        url: "http://localhost/solarpanels/php/test.json",
                         success:function(data){
                             $("body").append(JSON.stringify(data));
                         }
