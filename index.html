@@ -56,19 +56,34 @@ include_once 'addFields.php';
       <div class="container my-auto">
         <div class="row">
           <div class="col-lg-10 mx-auto">
+            <!--<button id="addPanels" class="btn-danger btn-lg"  onclick="addPanel()" style="top:430px; right:20px; padding:10px; z-index:1000; position:absolute;">
+              Add Solar Panel
+            </button>
+            <button id="submitbtn" class="btn-success btn-lg"  style="top:490px; right:20px; padding: 10px; z-index: 1000; position: absolute; "disabled>
+              Submit marker
+            </button>-->
+            <input class= "btn-info btn-lg" type="button"  id = "addPanels" value="Add Solar Panel" onclick="addPanel()">
+            <input class="btn-success btn-lg" type="button" id="submitbtn" value="Submit Marker" style="color: transparent; background-color: transparent; border-color: transparent;"onclick="Deactivate()" >
+            <input class="btn-danger btn-lg" type="button" id="delete" value="Delete Marker" style="color: transparent; background-color: transparent; border-color: transparent;" >
+            <input class="btn-warning btn-lg" type="button" id="update" value="Delete Marker" style="color: transparent; background-color: transparent; border-color: transparent;" >
             <h1 class="text-uppercase">
-              <strong> <div id="mapid"></div></strong>
+              <strong>
+                <div id="mapid">
+
+
+                </div>
+            </strong>
             </h1>
+            <!--<input class= "btn-danger btn-lg" type="button"  id = "addPanels" value="Add Solar Panel" onclick="addPanel()">-->
+
             <hr>
-              <input class= "btn-danger btn-lg"type="button"  id = "addPanels" value="Add Solar Panel" onclick="addPanel()">
-              <input class= "btn-success btn-lg"type="button"  id = "submitbtn" value="Sumbit Marker"style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;">
           </div>
         </div>
       </div>
     </header>
     <section id="contact">
       <div class="container">
-        <div id="result">sss</div>
+
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading">Developers</h2>
