@@ -16,7 +16,8 @@ The user enter its credentials inside the form.
 Then his password is hashed and from the database we select 
 the current user with the username and check his password if it is
 correct with the correct hash using password_verify function of php
-inside the passevaluate.php .
+inside the passevaluate.php .Also we check the number of time the user 
+has tried to enter using PHP Session.
 
 ### Stefanos Ioannou 
 ### Charalambos Theodorou
