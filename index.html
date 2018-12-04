@@ -1,7 +1,4 @@
-<?php
-include_once 'addFields.php';
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,26 +53,13 @@ include_once 'addFields.php';
       <div class="container my-auto">
         <div class="row">
           <div class="col-lg-10 mx-auto">
-            <!--<button id="addPanels" class="btn-danger btn-lg"  onclick="addPanel()" style="top:430px; right:20px; padding:10px; z-index:1000; position:absolute;">
-              Add Solar Panel
-            </button>
-            <button id="submitbtn" class="btn-success btn-lg"  style="top:490px; right:20px; padding: 10px; z-index: 1000; position: absolute; "disabled>
-              Submit marker
-            </button>-->
-            <input class= "btn-info btn-lg" type="button"  id = "addPanels" value="Add Solar Panel" onclick="addPanel()">
-            <input class="btn-success btn-lg" type="button" id="submitbtn" value="Submit Marker" style="color: transparent; background-color: transparent; border-color: transparent;"onclick="Deactivate()" >
-            <input class="btn-danger btn-lg" type="button" id="delete" value="Delete Marker" style="color: transparent; background-color: transparent; border-color: transparent;" >
-            <input class="btn-warning btn-lg" type="button" id="update" value="Delete Marker" style="color: transparent; background-color: transparent; border-color: transparent;" >
-            <h1 class="text-uppercase">
-              <strong>
-                <div id="mapid">
-
-
-                </div>
-            </strong>
+           <h1 class="text-uppercase">
+                <div id="mapid"></div>
             </h1>
-            <!--<input class= "btn-danger btn-lg" type="button"  id = "addPanels" value="Add Solar Panel" onclick="addPanel()">-->
-
+            <input class= "btn-danger btn-lg" type="button"  id = "addPanels" value="Add Solar Panel" onclick="addPanel()">
+            <input class= "btn-primary btn-lg"  type="button" value="Insert" name="successPanel" id="successPanel"/>    
+            <input class= "btn-danger btn-lg" type="button" value="Delete" name="deletePanel" id="deletePanel"/>  
+            <input class= "btn-success btn-lg"  type="button" value="Update" name="updatePanel" id="updatePanel"/> 
             <hr>
           </div>
         </div>
@@ -111,9 +95,7 @@ include_once 'addFields.php';
         </div>
       </div>
 
-      <input type="button" value="Insert" name="button1" id="button1"/>    
-      <input type="button" value="Delete" name="deleteb" id="deleteb"/>  
-      <input type="button" value="Update" name="update" id="update"/>  
+   
       </section>
 
 
@@ -128,7 +110,7 @@ include_once 'addFields.php';
     <script src="bootstrap/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="app_test.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/creative.js"></script>
     <script src="js/ajaxReadPanels.js"></script>
     <script src="js/ajaxForm.js"></script>

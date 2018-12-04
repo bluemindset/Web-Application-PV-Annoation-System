@@ -16,15 +16,16 @@ $(document).ready(function() {
     var Annual_Production;
     var CO2;
     var Reimbursement;
-    var Panel_modules;
+    var Panel_Modules;
     var Azimuth;
     var Inclination;
     var Communication;
     var Inverter;
     var Sensors ;
-    $("#button1").click(function(){
+
+    $("#successPanel").click(function(){
         $.ajax({
-            url: "http://localhost/solarpanels/php/insertpanels.php",
+            url: "http://localhost/solar/php/insertpanels.php",
             type: "POST",
             async:false,
             data: {
@@ -49,39 +50,36 @@ $(document).ready(function() {
             dataType: "JSON",
             complete: function (jsonstr) {
                 alert(JSON.stringify(jsonstr));
-                object = jsonstr;
-                $("#result").text(JSON.stringify(jsonstr));
-                
-            },       
+
+                alert("Your new Solar Panel Object is saved!");                
+            },
+           
         });
-
-
     });
 
-    $("#update").click(function(){
+    $("#updatePanel").click(function(){
         $.ajax({
-            url: "http://localhost/solarpanels/php/updatepanels.php",
+            url: "http://localhost/solar/php/updatepanels.php",
             type: "POST",
             async:false,
             data: { 
-                Name: name,                                          
-                X_cord:  X_cord,
-                Y_cord: Y_cord,
-                 Address: Address,                                  
-                 Operator_Name: Operator,
-                 Commision_Date:Commision_Date,
-                 Description:Description, 
-                 System_Power:System_Power,
-                 Annual_Production :Annual_Production , 
-                 CO2: CO2,
-                 Reimbursement : Reimbursement,
-                 Panel_Modules: Panel_modules,
-                 Azimuth  : Azimuth,
-                 Inclination_Angle :Inclination,
-                 Communication :Communication,
-                 Inverter :Inverter,
-                 Sensors : Sensors 
-               
+                    Name: name,                                          
+                    X_cord:  X_cord,
+                    Y_cord: Y_cord,
+                    Address: Address,                                  
+                    Operator_Name: Operator,
+                    Commision_Date:Commision_Date,
+                    Description:Description, 
+                    System_Power:System_Power,
+                    Annual_Production :Annual_Production , 
+                    CO2: CO2,
+                    Reimbursement : Reimbursement,
+                    Panel_Modules: Panel_Modules,
+                    Azimuth  : Azimuth,
+                    Inclination_Angle :Inclination,
+                    Communication :Communication,
+                    Inverter :Inverter,
+                    Sensors : Sensors  
                 },
             dataType: "JSON",
             complete: function (jsonstr) {
@@ -90,52 +88,53 @@ $(document).ready(function() {
                 window.location.reload();
             },       
         });
-
     });
-    $("#deleteb").click(function(){
+
+    $("#deletePanel").click(function(){
+        alert("hello");
         $.ajax({
-            url: "http://localhost/solarpanels/php/deletepanels.php",
+            url: "http://localhost/solar/php/deletepanels.php",
             type: "POST",
             async:false,
             data: {
-                Name: Name
+                Name: name
             },
             dataType: "JSON",
-            complete: function (jsonstr) {
-                
-                alert(JSON.stringify(jsonstr));
-                window.location.reload();
-            },       
+            success: function (jsonstr) {
+                alert("The selected Solar Panel Object is deleted!"); 
+                window.location.reload();               
+            },
+            error:function (){
+                alert("Make sure you press the marker of the solar panel you want to delete!")
+            }       
         });
-
     });
 
     map.on('popupopen', function(e) {
-            var delayInMilliseconds = 500; 
-            setTimeout(function() {
-                var checkViewport = setInterval(function() {
-                var marker = e.popup._source._popup.getContent();
-                name = ( $('[name=Name]').val() );
-                X_cord= ( $('[name=X_cord]').val() );
-                Y_cord= ( $('[name=Y_cord]').val() );
-                 //Photo = ( $('[name=Photo]').val() );
-                 Address = ( $('[name=Address]').val() );
-                 Oparetor= ( $('[name=Operator_Name]').val() );
-                 Commision_Date = ( $('[name=Commision_Date]').val() );
-                 Description = ( $('[name=Description]').val() );
-                 System_Power =  ( $('[name=System_Power]').val() );
-                 Annual_Production  = ( $('[name=Annual_Production]').val() ); 
-                 CO2=   ($('[name=co2]').val() );
-                 Reimbursement = ($('[name=Reimbursement]').val() );
-                 Panel_modules= ($('[name=Panel_modules]').val() );
-                 Azimuth=($('[name=Azimuth]').val() );
-                 Inclination = ($('[name=Inclination]').val() );
-                 Communication = ($('[name=Communication]').val() );
-                 Inverter = ($('[name=Inverter]').val() );
-                 Sensors = ($('[name=Sensors]').val() );
-                }, 50);
-                alert(name);
-                
-            }, delayInMilliseconds);    
-        });
+        var delayInMilliseconds = 100; 
+        setTimeout(function() {
+            var checkViewport = setInterval(function() {
+            var marker = e.popup._source._popup.getContent();
+            name = ( $('[name=Name]').val() );
+            X_cord= ( $('[name=X_cord]').val() );
+            Y_cord= ( $('[name=Y_cord]').val() );
+             //Photo = ( $('[name=Photo]').val() );
+             Address = ( $('[name=Address]').val() );
+             Operator= ( $('[name=Operator_Name]').val() );
+             Commision_Date = ( $('[name=Commision_Date]').val() );
+             Description = ( $('[name=Description]').val() );
+             System_Power =  ( $('[name=System_Power]').val() );
+             Annual_Production  = ( $('[name=Annual_Production]').val() ); 
+             CO2=   ($('[name=CO2]').val() );
+             Reimbursement = ($('[name=Reimbursement]').val() );
+             Panel_Modules= ($('[name=Panel_Modules]').val() );
+             Azimuth=($('[name=Azimuth]').val() );
+             Inclination = ($('[name=Inclination_Angle]').val() );
+             Communication = ($('[name=Communication]').val() );
+             Inverter = ($('[name=Inverter]').val() );
+             Sensors = ($('[name=Sensors]').val() );
+            }, 50);
+            alert(name);
+        }, delayInMilliseconds);    
+    });
 });
