@@ -1,81 +1,7 @@
 (ID,Name,X_cord,Y_cord,Address,Operator_Name,Commision_Date,Description,System_Power,Annual_Production,CO2,Reimbursement,
 Panel_Modules,Azimuth,Inclination_Angle,Communication,Inverter,Sensors)
 
-CREATE TABLE solarPanels
-  (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(30) NOT NULL,
-    Photo VARCHAR(50) NOT NULL,
-    X_cord DECIMAL NOT NULL,
-    Y_cord DECIMAL NOT NULL,
-    Address VARCHAR(40) NOT NULL,
-    Operator_Name VARCHAR(40) NOT NULL,
-    Commision_Date DATE NOT NULL,
-    Description VARCHAR(100) NOT NULL,
-    System_Power DECIMAL NOT NULL,
-    Annual_Production DECIMAL NOT NULL,
-    CO2 DECIMAL NOT NULL,
-    Reimbursement DECIMAL NOT NULL,
-    Panel_Modules INT NOT NULL,
-    Azimuth DECIMAL NOT NULL,
-    Inclination_Angle DECIMAL NOT NULL,
-    Communication VARCHAR(40) NOT NULL,
-    Inverter VARCHAR(40) NOT NULL,
-    Sensors VARCHAR(40) NOT NULL
-  )
- ENGINE=INNODB;
-
-
-CREATE TABLE solarPanels2
-  (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(30)  ,
-    Photo VARCHAR(50) ,
-    X_cord DECIMAL  ,
-    Y_cord DECIMAL  ,
-    Address VARCHAR(40)  ,
-    Operator_Name VARCHAR(40),
-    Commision_Date DATE  ,
-    Description VARCHAR(100),
-    System_Power DECIMAL ,
-    Annual_Production DECIMAL,
-    CO2 DECIMAL ,
-    Reimbursement DECIMAL ,
-    Panel_Modules INT ,
-    Azimuth DECIMAL ,
-    Inclination_Angle DECIMAL ,
-    Communication VARCHAR(40) ,
-    Inverter VARCHAR(40) ,
-    Sensors VARCHAR(40)
-  )
- ENGINE=INNODB;
-
  CREATE TABLE solarPV
-  (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(30)  ,
-    Photo VARCHAR(50) ,
-    X_cord DECIMAL(10,6)  ,
-    Y_cord DECIMAL(10,6)  ,
-    Address VARCHAR(40)  ,
-    Operator_Name VARCHAR(40),
-    Commision_Date DATE  ,
-    Description VARCHAR(100),
-    System_Power VARCHAR(10) ,
-    Annual_Production VARCHAR(10),
-    CO2 VARCHAR(10) ,
-    Reimbursement VARCHAR(10) ,
-    Panel_Modules VARCHAR(10) ,
-    Azimuth VARCHAR(10) ,
-    Inclination_Angle VARCHAR(10) ,
-    Communication VARCHAR(10) ,
-    Inverter VARCHAR(10) ,
-    Sensors VARCHAR(10)
-  )
- ENGINE=INNODB;
-
- 
- CREATE TABLE solarPVss
   (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(30)  ,
@@ -111,3 +37,40 @@ CREATE TABLE users_S
     Name VARCHAR(30)
   )
  ENGINE=INNODB;
+
++-------------------+---------------+------+-----+---------+----------------+
+| Field             | Type          | Null | Key | Default | Extra          |
++-------------------+---------------+------+-----+---------+----------------+
+| ID                | int(11)       | NO   | PRI | NULL    | auto_increment |
+| Name              | varchar(30)   | YES  |     | NULL    |                |
+| Photo             | longtext      | YES  |     | NULL    |                |
+| X_cord            | decimal(10,6) | YES  |     | NULL    |                |
+| Y_cord            | decimal(10,6) | YES  |     | NULL    |                |
+| Address           | varchar(40)   | YES  |     | NULL    |                |
+| Operator_Name     | varchar(40)   | YES  |     | NULL    |                |
+| Commision_Date    | date          | YES  |     | NULL    |                |
+| Description       | varchar(100)  | YES  |     | NULL    |                |
+| System_Power      | varchar(10)   | YES  |     | NULL    |                |
+| Annual_Production | varchar(10)   | YES  |     | NULL    |                |
+| CO2               | varchar(10)   | YES  |     | NULL    |                |
+| Reimbursement     | varchar(10)   | YES  |     | NULL    |                |
+| Panel_Modules     | varchar(10)   | YES  |     | NULL    |                |
+| Azimuth           | varchar(10)   | YES  |     | NULL    |                |
+| Inclination_Angle | varchar(10)   | YES  |     | NULL    |                |
+| Communication     | varchar(10)   | YES  |     | NULL    |                |
+| Inverter          | varchar(10)   | YES  |     | NULL    |                |
+| Sensors           | varchar(10)   | YES  |     | NULL    |                |
++-------------------+---------------+------+-----+---------+----------------+
+
+
+
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| ID       | int(11)     | NO   | PRI | NULL    | auto_increment |
+| UserName | varchar(30) | YES  |     | NULL    |                |
+| Password | varchar(30) | YES  |     | NULL    |                |
+| HashedP  | varchar(80) | YES  |     | NULL    |                |
+| Email    | varchar(30) | YES  |     | NULL    |                |
+| Name     | varchar(30) | YES  |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+

@@ -2,7 +2,7 @@
 class PV
 {
   private $conn;
-  private $table_name="solarPVts";
+  private $table_name="solarPV";
   public $id;
   public $name;
   public $photo;

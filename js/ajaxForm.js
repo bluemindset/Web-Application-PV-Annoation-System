@@ -2,8 +2,6 @@
 and sends a post request to the postJason.php*/
 
 $(document).ready(function() {
-    var object;
-    var currentmarker;
     var name;
     var Photo ;
     var X_cord;
@@ -55,7 +53,6 @@ $(document).ready(function() {
             dataType: "JSON",
             complete: function (jsonstr) {
                 window.location.reload();
-                alert("Your new Solar Panel Object is saved!");                
             },
            
         });
@@ -88,8 +85,6 @@ $(document).ready(function() {
                 },
             dataType: "JSON",
             complete: function (jsonstr) {
-                
-                alert("Panel Updated");
                 window.location.reload();
             },       
         });
@@ -105,8 +100,7 @@ $(document).ready(function() {
             },
             dataType: "JSON",
             complete: function (jsonstr) {
-                alert("The selected Solar Panel Object is deleted!"); 
-                window.location.reload();               
+                window.location.reload();  
             }    
         });
     });
