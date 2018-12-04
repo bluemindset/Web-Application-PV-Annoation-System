@@ -6,8 +6,9 @@ $ndb = $ndatabase->getConnection();
 
 $npanel = new PV($ndb);
 
+
 $Name = $_POST["Name"];
-//$Photo= $_POST["Photo"];
+$Photo= $_POST["Photo"];
 $X_cord = $_POST["X_cord"];
 $Y_cord = $_POST["Y_cord"];
 $Address = $_POST["Address"];
@@ -26,7 +27,7 @@ $Inverter = $_POST["Inverter"];
 $Sensors = $_POST["Sensors"];
 
       $npanel->name=                 $Name;
-   //   $npanel->photo=              $Photo;
+      $npanel->photo=                $Photo;
       $npanel->x_cord=               $X_cord;
       $npanel->y_cord=               $Y_cord;
       $npanel->address=              $Address;
@@ -44,7 +45,7 @@ $Sensors = $_POST["Sensors"];
       $npanel->inverter=             $Inverter;
       $npanel->sensors=              $Sensors ;
 
-if($npanel->insertSql())
+if($npanel->updateSql())
        http_response_code(201);
     else
         http_response_code(503);

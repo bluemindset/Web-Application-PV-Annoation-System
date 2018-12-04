@@ -2,7 +2,7 @@
 class PV
 {
   private $conn;
-  private $table_name="solarPV";
+  private $table_name="solarPVts";
   public $id;
   public $name;
   public $photo;
@@ -35,10 +35,12 @@ class PV
   }
   
   public function insertSql(){
-     $query = "INSERT INTO " . $this->table_name . "(Name,X_cord,Y_cord,Address,Operator_Name,Commision_Date,Description,System_Power,Annual_Production,CO2,Reimbursement,
+
+
+     $query = "INSERT INTO " . $this->table_name . "(Name,Photo,X_cord,Y_cord,Address,Operator_Name,Commision_Date,Description,System_Power,Annual_Production,CO2,Reimbursement,
      Panel_Modules,Azimuth,Inclination_Angle,Communication,Inverter,Sensors)
      VALUES ("."\"" . $this->name             . "\"," 
-            // . "\"" . $this->photo            . "\","       
+             . "\"" . $this->photo            . "\","       
                     .$this->x_cord           . ","   
                     .$this->y_cord           . ","   
              . "\"" .$this->address          . "\","   
@@ -57,7 +59,7 @@ class PV
              . "\"" .$this->sensors          . "\""    
      ." )";
      
-     echo $query;
+   //  echo $query;
 
      
      $sendquery = $this->conn->prepare($query);

@@ -16,8 +16,20 @@ attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStree
 id: 'mapbox.streets'
 }).addTo(map);
 
+function readURL(input) {
+  if (input.files && input.files[0]) {
+      var reader = new FileReader();
 
-
+      reader.onload = function (e) {
+          $('#photo')
+              .attr('src', e.target.result)
+              .width(150)
+              .height(200);
+              
+      };
+           reader.readAsDataURL(input.files[0]);
+  }
+}
 function addPanel(){
 
 document.getElementById("addPanels").className= "btn-success btn-lg";
@@ -36,7 +48,7 @@ document.getElementById("mapid").style.cursor = 'crosshair';
                                   "<br><label>Address</label> "+"   <input type=\"text\" value=\"Enter\" id=\"Address\" name=\"Address\" required>"+
                                   "<br><label>Operator Name</label>"+"       <input type=\"text\" value=\"Enter\" id=\"Operator_Name\" name=\"Operator_Name\" size=\"20\" required>"+
                                   "<br><label>Commision Date</label>"+"     <input type=\"date\" name=\"Commision_Date\" id=\"Commision_Date\" required>"+
-                                  "<br><label>Description</label>"+"        <textarea style=\"resize:none;\" cols=\"40\" rows=\"5\" id=\"Description\" value=\"Enter a Description:\" name=\"Description\" required></textarea>"+
+                                  "<br><label>Description</label>"+"       <input type=\"text\" name=\"Description\" id=\"Description\" required>"+
                                   "<br><label>System Power</label>"+"        <input type=\"text\" value=1 id=\"System_Power\" name=\"System_Power\" size=\"20\" required>"+
                                   "<br><label>Annual Production</label>"+"      <input type=\"text\" value=1 id=\"Annual_Production\" name=\"Annual_Production\" size=\"10\" required>"+
                                   "<br><label>CO2 avoided</label>"+"      <input type=\"text\" value=1 name=\"CO2\" id=\"CO2\" size=\"10\" required>"+
@@ -47,7 +59,8 @@ document.getElementById("mapid").style.cursor = 'crosshair';
                                   "<br><label>Communication</label>"+"       <input type=\"text\" value=1 id=\"Communication\" name=\"Communication\" size=\"15\" required>"+
                                   "<br><label>Inverter</label>"+"      <input type=\"text\" value=Enter id=\"Inverter\" name=\"Inverter\" size=\"15\" required>"+
                                   "<br><label>Sensors</label>"+"      <input type=\"text\" value=Enter id=\"Sensors\" name=\"Sensors\" size=\"10\" required>"+
-                                  "<br><input type=\"button\" value=\"Sumbit\" name =\"submit\" id=\"submit\">"+" <input type=\"button\" value=\"Cancel\"></form>";
+                                  "<br><label>Photo</label> "+"<input type=\"file\" onchange=\"readURL(this);\" />" +  "<img  id=\"photo\"name=\"photo\" src=\"ee\"alt=\"Solar Panel\" />";
+
                     var popup = L.popup( {maxHeight:300 }).setContent(content);
                     alert("Add Solar Panel Location on map at cordinates: \nLA: " + lat[1] + " & LO: " + lng[0]);
                     L.marker(e.latlng).addTo(map).bindPopup(popup).openPopup();

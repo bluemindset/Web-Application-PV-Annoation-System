@@ -5,7 +5,7 @@ $(document).ready(function() {
     var object;
     var currentmarker;
     var name;
-    var Photo;
+    var Photo ;
     var X_cord;
     var Y_cord;
     var Address;
@@ -46,6 +46,7 @@ $(document).ready(function() {
                 Communication: $("#Communication").val(),
                 Inverter: $("#Inverter").val(),
                 Sensors:$("#Sensors").val(),
+                Photo:$("#photo").attr('src')
             },
             dataType: "JSON",
             complete: function (jsonstr) {
@@ -79,7 +80,8 @@ $(document).ready(function() {
                     Inclination_Angle :Inclination,
                     Communication :Communication,
                     Inverter :Inverter,
-                    Sensors : Sensors  
+                    Sensors : Sensors, 
+                    Photo:Photo 
                 },
             dataType: "JSON",
             complete: function (jsonstr) {
@@ -100,13 +102,10 @@ $(document).ready(function() {
                 Name: name
             },
             dataType: "JSON",
-            success: function (jsonstr) {
+            complete: function (jsonstr) {
                 alert("The selected Solar Panel Object is deleted!"); 
                 window.location.reload();               
-            },
-            error:function (){
-                alert("Make sure you press the marker of the solar panel you want to delete!")
-            }       
+            }    
         });
     });
 
@@ -118,7 +117,7 @@ $(document).ready(function() {
             name = ( $('[name=Name]').val() );
             X_cord= ( $('[name=X_cord]').val() );
             Y_cord= ( $('[name=Y_cord]').val() );
-             //Photo = ( $('[name=Photo]').val() );
+             Photo = ( $('#photo').attr('src'));
              Address = ( $('[name=Address]').val() );
              Operator= ( $('[name=Operator_Name]').val() );
              Commision_Date = ( $('[name=Commision_Date]').val() );
