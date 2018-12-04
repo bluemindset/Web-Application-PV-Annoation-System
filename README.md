@@ -9,7 +9,7 @@
 1. Every Panel information is stored inside MYSQL including images 
 with type blob.
 2. Insert , Update , Delete , Read are done using AJAX 
-3. PHP Rest API using PHP Data Objects (PDO) such as Panel,Database and User
+3. PHP Rest API using PHP Data Objects (PDO) such as Panel,Database and User Objects.
 
 ## Authentication
 The user enter its credentials inside the form.
