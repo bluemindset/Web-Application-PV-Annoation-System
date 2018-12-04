@@ -23,6 +23,20 @@ $(document).ready(function() {
     var Inverter;
     var Sensors ;
 
+    $("#cancelPanel").click(function(){
+       alert("hi");
+        document.getElementById('mapid').style.cursor = 'grab';
+        map.closePopup();
+        
+           
+        });
+   
+
+
+
+
+
+
     $("#successPanel").click(function(){
         $.ajax({
             url: "http://localhost/solar/php/insertpanels.php",
@@ -51,6 +65,7 @@ $(document).ready(function() {
             dataType: "JSON",
             complete: function (jsonstr) {
                 alert(JSON.stringify(jsonstr));
+                window.location.reload();
 
                 alert("Your new Solar Panel Object is saved!");                
             },

@@ -35,7 +35,7 @@ function addPanel(){
 document.getElementById("addPanels").className= "btn-success btn-lg";
 
 document.getElementById("mapid").style.cursor = 'crosshair';
-  map.on('click',
+  map.once('click',
                 function(e){
 
                     var coord = e.latlng.toString().split(',');

@@ -35,7 +35,7 @@ $(document).ready(function(){
                                         "<br><label>Inverter</label>            "+"         <input type=\"text\" value=" +panel[i].Inverter+         " name=\"Inverter\" size=\"15\" required>"+
                                         "<br><label>Sensors</label>             "+"         <input type=\"text\" value=" +panel[i].Sensors+          " name=\"Sensors\" size=\"10\" required>"+
                                         "<br><label>Description</label>         "+"         <input type=\"text\" value=" +panel[i].Description+      " name=\"Description\" size=\"10\" required>"+
-                                        "<br><label>Photo</label>               "+"         <input type=\"file\" onchange=\"readURL(this);\" />" +  "<img id=\"photo\"name=\"photo\" src=" + "\""+panel[i].Photo+ "\"alt=\"Solar Panel\" />";
+                                        "<br><label>Photo</label>               "+"         <input type=\"file\" onchange=\"readURL(this);\" />" +  "<img id=\"photo\"name=\"photo\" src=" + "\""+panel[i].Photo+ "\"alt=\"Solar Panel\"  />";
                                         var popup=L.popup({maxHeight:300}).setContent(content);
                                         L.marker([panel[i].X_cord,panel[i].Y_cord]).addTo(map).bindPopup(popup);
                                     }
