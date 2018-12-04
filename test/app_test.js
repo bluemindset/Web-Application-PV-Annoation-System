@@ -37,8 +37,8 @@ document.getElementById("mapid").style.cursor = 'crosshair';
                                   "<br><label>Y-cord</label> "+"   <input type=\"text\" value="+lng[0]+" size=\"6\" id=\"Y_cord\" name=\"Y_cord\" required>"+
                                   "<br><label>Address</label> "+"   <input type=\"text\" value=Enter id=\"Address\" name=\"Address\" required>"+
                                   "<br><label>Operator Name</label>"+"     <input type=\"text\" value=Enter id=\"Operator_Name\" name=\"Operator_Name\" size=\"20\" required>"+
-                                  "<br><label>Commision Date</label>"+"     <input type=\"date\" name=Commision id=\"Commision_Date\" required>"+
-                                  "<br><label>Description</label>"+"        <textarea style=\"resize:none;\" cols=\"40\" rows=\"5\" id=\"Description\" value=\"Enter a Description:\" name=\"Description\" required></textarea>"+
+                                  "<br><label>Commision Date</label>"+"     <input type=\"date\" name=\"Commision_Date\" id=\"Commision_Date\" required>"+
+                                  "<br><label>Description</label>"+"        <textarea style=\"resize:none;\" cols=\"40\" rows=\"5\" id=\"Description\" value=Enter name=\"Description\" required></textarea>"+
                                   "<br><label>System Power</label>"+"        <input type=\"text\" value=Enter id=\"System_Power\" name=\"System_Power\" size=\"20\" required>"+
                                   "<br><label>Annual Production</label>"+"      <input type=\"text\" value=in id=\"Annual_Production\" name=\"Annual_Production\" size=\"10\" required>"+
                                   "<br><label>CO2 avoided</label>"+"      <input type=\"text\" value=in name=\"CO2\" id=\"CO2\" size=\"10\" required>"+
