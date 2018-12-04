@@ -3,8 +3,25 @@ and sends a post request to the postJason.php*/
 
 $(document).ready(function() {
     var object;
-    var choice;
     var currentmarker;
+    var name;
+    var Photo;
+    var X_cord;
+    var Y_cord;
+    var Address;
+    var Operator;
+    var Commision_Date;
+    var Description;
+    var System_Power;
+    var Annual_Production;
+    var CO2;
+    var Reimbursement;
+    var Panel_modules;
+    var Azimuth;
+    var Inclination;
+    var Communication;
+    var Inverter;
+    var Sensors ;
     $("#button1").click(function(){
         $.ajax({
             url: "http://localhost/solarpanels/php/insertpanels.php",
@@ -41,14 +58,31 @@ $(document).ready(function() {
 
     });
 
-    $("#deleteb").click(function(){
+    $("#update").click(function(){
         $.ajax({
-            url: "http://localhost/solarpanels/php/deletepanels.php",
+            url: "http://localhost/solarpanels/php/updatepanels.php",
             type: "POST",
             async:false,
-            data: {
-                Name: choice
-            },
+            data: { 
+                Name: name,                                          
+                X_cord:  X_cord,
+                Y_cord: Y_cord,
+                 Address: Address,                                  
+                 Operator_Name: Operator,
+                 Commision_Date:Commision_Date,
+                 Description:Description, 
+                 System_Power:System_Power,
+                 Annual_Production :Annual_Production , 
+                 CO2: CO2,
+                 Reimbursement : Reimbursement,
+                 Panel_Modules: Panel_modules,
+                 Azimuth  : Azimuth,
+                 Inclination_Angle :Inclination,
+                 Communication :Communication,
+                 Inverter :Inverter,
+                 Sensors : Sensors 
+               
+                },
             dataType: "JSON",
             complete: function (jsonstr) {
                 
@@ -58,13 +92,13 @@ $(document).ready(function() {
         });
 
     });
-    $("#update").click(function(){
+    $("#deleteb").click(function(){
         $.ajax({
             url: "http://localhost/solarpanels/php/deletepanels.php",
             type: "POST",
             async:false,
             data: {
-                Name: choice
+                Name: Name
             },
             dataType: "JSON",
             complete: function (jsonstr) {
@@ -77,12 +111,31 @@ $(document).ready(function() {
     });
 
     map.on('popupopen', function(e) {
-            var delayInMilliseconds = 1000; 
+            var delayInMilliseconds = 500; 
             setTimeout(function() {
+                var checkViewport = setInterval(function() {
                 var marker = e.popup._source._popup.getContent();
-                var name = ( $('[name=Name]').val() );
-                name = currentname;
-                alert(choice);
+                name = ( $('[name=Name]').val() );
+                X_cord= ( $('[name=X_cord]').val() );
+                Y_cord= ( $('[name=Y_cord]').val() );
+                 //Photo = ( $('[name=Photo]').val() );
+                 Address = ( $('[name=Address]').val() );
+                 Oparetor= ( $('[name=Operator_Name]').val() );
+                 Commision_Date = ( $('[name=Commision_Date]').val() );
+                 Description = ( $('[name=Description]').val() );
+                 System_Power =  ( $('[name=System_Power]').val() );
+                 Annual_Production  = ( $('[name=Annual_Production]').val() ); 
+                 CO2=   ($('[name=co2]').val() );
+                 Reimbursement = ($('[name=Reimbursement]').val() );
+                 Panel_modules= ($('[name=Panel_modules]').val() );
+                 Azimuth=($('[name=Azimuth]').val() );
+                 Inclination = ($('[name=Inclination]').val() );
+                 Communication = ($('[name=Communication]').val() );
+                 Inverter = ($('[name=Inverter]').val() );
+                 Sensors = ($('[name=Sensors]').val() );
+                }, 50);
+                alert(name);
+                
             }, delayInMilliseconds);    
         });
 });
