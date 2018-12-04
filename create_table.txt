@@ -98,3 +98,16 @@ CREATE TABLE solarPanels2
     Sensors VARCHAR(10)
   )
  ENGINE=INNODB;
+
+
+
+CREATE TABLE users_S
+  (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    UserName VARCHAR(30)  ,
+    Password VARCHAR(30)  ,
+    HashedP  VARCHAR(80)  ,
+    Email VARCHAR(30),
+    Name VARCHAR(30)
+  )
+ ENGINE=INNODB;

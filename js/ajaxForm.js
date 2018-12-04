@@ -24,19 +24,9 @@ $(document).ready(function() {
     var Sensors ;
 
     $("#cancelPanel").click(function(){
-       alert("hi");
         document.getElementById('mapid').style.cursor = 'grab';
         map.closePopup();
-        
-           
         });
-   
-
-
-
-
-
-
     $("#successPanel").click(function(){
         $.ajax({
             url: "http://localhost/solar/php/insertpanels.php",
@@ -64,9 +54,7 @@ $(document).ready(function() {
             },
             dataType: "JSON",
             complete: function (jsonstr) {
-                alert(JSON.stringify(jsonstr));
                 window.location.reload();
-
                 alert("Your new Solar Panel Object is saved!");                
             },
            
@@ -101,14 +89,13 @@ $(document).ready(function() {
             dataType: "JSON",
             complete: function (jsonstr) {
                 
-                alert(JSON.stringify(jsonstr));
+                alert("Panel Updated");
                 window.location.reload();
             },       
         });
     });
 
     $("#deletePanel").click(function(){
-        alert("hello");
         $.ajax({
             url: "http://localhost/solar/php/deletepanels.php",
             type: "POST",
@@ -123,8 +110,21 @@ $(document).ready(function() {
             }    
         });
     });
+    map.on('popupclose',function(){
 
+        document.getElementById("deletePanel").disabled = true;
+        document.getElementById("updatePanel").disabled = true;
+        document.getElementById("deletePanel").style.backgroundColor = "grey";
+        document.getElementById("updatePanel").style.backgroundColor = "grey";
+    })
     map.on('popupopen', function(e) {
+
+        document.getElementById("deletePanel").disabled = false;
+        document.getElementById("updatePanel").disabled = false;
+        document.getElementById("deletePanel").style= "default";
+        document.getElementById("updatePanel").style = "default";
+
+
         var delayInMilliseconds = 100; 
         setTimeout(function() {
             var checkViewport = setInterval(function() {
@@ -148,7 +148,6 @@ $(document).ready(function() {
              Inverter = ($('[name=Inverter]').val() );
              Sensors = ($('[name=Sensors]').val() );
             }, 50);
-            alert(name);
         }, delayInMilliseconds);    
     });
 });

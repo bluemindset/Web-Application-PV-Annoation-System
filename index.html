@@ -6,7 +6,6 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
     <meta name="author" content="">
 
     <title>Solar Panels CS425</title>
@@ -26,14 +25,14 @@
     <link href="bootstrap/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/creative.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
   </head>
 
   <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">PV ANNOTATION SYSTEM</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,9 +40,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
+           
           </ul>
         </div>
       </div>
@@ -56,20 +53,24 @@
            <h1 class="text-uppercase">
                 <div id="mapid"></div>
             </h1>
+            <p style= "color:black;">Please select a marker to peform Delete or Update. Add a marker by pressing 
+                Add Solar Panel.Fill all the gaps and then press insert.
+            </p>
+            
             <input class= "btn-danger btn-lg" type="button"  id = "addPanels" value="Add Solar Panel" onclick="addPanel()">
             <input class= "btn-primary btn-lg"  type="button" value="Insert" name="successPanel" id="successPanel"/>    
             <input class= "btn-danger btn-lg" type="button" value="Delete" name="deletePanel" id="deletePanel"/>  
             <input class= "btn-success btn-lg"  type="button" value="Update" name="updatePanel" id="updatePanel"/> 
             <input class= "btn-danger btn-lg"  type="button" value="Cancel" name="cancelPanel" id="cancelPanel"/> 
             
-            <hr>
+            
           </div>
         </div>
       </div>
     </header>
     <section id="contact">
       <div class="container">
-
+        <hr>
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading">Developers</h2>
@@ -112,10 +113,11 @@
     <script src="bootstrap/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/app.js"></script>
+ 
     <script src="js/creative.js"></script>
     <script src="js/ajaxReadPanels.js"></script>
     <script src="js/ajaxForm.js"></script>
+    <script src="js/app.js"></script>
 
   </body>
 

@@ -3,15 +3,22 @@
 create markers to insert the data inside*/
 
 $(document).ready(function(){
-                 $.ajax({
+    document.getElementById("successPanel").disabled = true;
+    document.getElementById("deletePanel").disabled = true;
+    document.getElementById("updatePanel").disabled = true;
+    document.getElementById("deletePanel").style.backgroundColor = "grey";
+    document.getElementById("updatePanel").style.backgroundColor = "grey";
+    document.getElementById("successPanel").style.backgroundColor = "grey";
+    document.getElementById("addPanels").className= "btn-warning btn-lg";
+
+
+    $.ajax({
                         type: 'GET',
                         dataType: 'json',
                         url: "http://localhost/solar/php/readpanels.php",
                         success:function(data){
                             var datastr = JSON.stringify(data);
                             var allPanels = JSON.parse(datastr);
-                            alert(datastr);
-                            $("body").append(JSON.stringify(data));
                             for (var key in allPanels) {
                                 if (allPanels.hasOwnProperty(key)) {
                                   var panel  = allPanels[key];
@@ -34,7 +41,7 @@ $(document).ready(function(){
                                         "<br><label>Communication</label>       "+"         <input type=\"text\" value=" +panel[i].Communication+    " name=\"Communication\" size=\"15\" required>"+
                                         "<br><label>Inverter</label>            "+"         <input type=\"text\" value=" +panel[i].Inverter+         " name=\"Inverter\" size=\"15\" required>"+
                                         "<br><label>Sensors</label>             "+"         <input type=\"text\" value=" +panel[i].Sensors+          " name=\"Sensors\" size=\"10\" required>"+
-                                        "<br><label>Description</label>         "+"         <input type=\"text\" value=" +panel[i].Description+      " name=\"Description\" size=\"10\" required>"+
+                                        "<br><label>Description</label>         "+"         <input type=\"text\" value=" +panel[i].Description+      " name=\"Description\" size=\"20\" required>"+
                                         "<br><label>Photo</label>               "+"         <input type=\"file\" onchange=\"readURL(this);\" />" +  "<img id=\"photo\"name=\"photo\" src=" + "\""+panel[i].Photo+ "\"alt=\"Solar Panel\"  />";
                                         var popup=L.popup({maxHeight:300}).setContent(content);
                                         L.marker([panel[i].X_cord,panel[i].Y_cord]).addTo(map).bindPopup(popup);

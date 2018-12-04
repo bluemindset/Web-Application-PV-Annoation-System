@@ -6,6 +6,7 @@ $allrows = $panelInfo->rowCount();
 $solar_all = array();
 $solar_all["all"] = array();
 
+
 if($allrows > 0){
     while ($row = $panelInfo->fetch(PDO::FETCH_ASSOC) ){
             array_push ($solar_all["all"],$row);
