@@ -1,4 +1,4 @@
-# CS 425: Implementation of a PV Annoation System 
+# Implementation of a PV Annoation System 
 
 ## Front End
 1. Login Form with Security
