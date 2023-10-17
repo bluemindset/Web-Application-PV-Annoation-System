@@ -21,4 +21,3 @@ has tried to enter using PHP Session.
 
 ### Stefanos Ioannou 
 ### Charalambos Theodorou
-### Team11
